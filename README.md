@@ -57,7 +57,7 @@
 
 ### 1. Repository Clone Karein
 ```bash
-git clone https://github.com/GothwadTech/Mm.git
+git clone https://github.com/Bansify/Mm.git
 cd Mm
 ```
 
@@ -89,7 +89,7 @@ Gothwad Meet ko **Cloudflare Pages** par deploy karna behad aasan hai:
 ### Step 1: Cloudflare Dashboard me Jayein
 1. [Cloudflare Dashboard](https://dash.cloudflare.com/) open karein.
 2. **Workers & Pages** -> **Create Application** -> **Pages** -> **Connect to Git** select karein.
-3. Apna GitHub repository (`GothwadTech/Mm` ya `meet`) select karein.
+3. Apna GitHub repository (`Bansify/Mm` ya `meet`) select karein.
 
 ### Step 2: Build Settings Configure Karein
 Neeche diye gaye settings enter karein:
@@ -171,4 +171,4 @@ Application browser se neeche di gayi permissions request karti hai:
 
 Contributions welcome hain! Koi bhi bug fix ya naya feature add karne ke liye Pull Request (PR) open karein.
 
-Developed with ❤️ by **GothwadTech**.
+Developed with ❤️ by **Bansify**.
