@@ -170,7 +170,7 @@ export const HomeLobby: React.FC<Props> = ({
                   isDark ? 'text-neutral-400' : 'text-neutral-600'
                 }`}
               >
-                Gothwad Meet provides secure, high-definition video calls with live captions,
+                Bansify Meet provides secure, high-definition video calls with live captions,
                 screen sharing, whiteboard, and reactions. Built specifically for zero-server hosting on Cloudflare Pages.
               </p>
             </div>
@@ -376,7 +376,7 @@ export const HomeLobby: React.FC<Props> = ({
           isDark ? 'border-neutral-800 text-neutral-500' : 'border-neutral-200 text-neutral-500'
         }`}
       >
-        <span>Gothwad Meet • Dark #212121 • Light #FFFFFF • Accent #0494F4</span>
+        <span>Bansify Meet • Dark #212121 • Light #FFFFFF • Accent #0494F4</span>
       </footer>
     </div>
   );
