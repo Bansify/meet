@@ -1,5 +1,5 @@
 {
-  "name": "Gothwad Meet",
+  "name": "Bansify Meet",
   "description": "Real-time WebRTC video and audio meetings built for Cloudflare Pages and desktop/mobile devices.",
   "requestFramePermissions": [
     "camera",

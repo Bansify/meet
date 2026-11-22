@@ -121,7 +121,7 @@ export const InfoPanel: React.FC<Props> = ({
             <span>Cloudflare Pages Ready</span>
           </div>
           <p className="text-neutral-300 leading-relaxed text-[11px]">
-            Gothwad Meet does not require a custom backend server. Deploy directly to Cloudflare Pages static hosting with Vite output <code className="text-[#0494f4]">dist</code>.
+            Bansify Meet does not require a custom backend server. Deploy directly to Cloudflare Pages static hosting with Vite output <code className="text-[#0494f4]">dist</code>.
           </p>
           <button
             onClick={onOpenCloudflareGuide}

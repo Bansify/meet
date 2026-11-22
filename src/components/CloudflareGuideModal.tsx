@@ -38,7 +38,7 @@ Node Version: 18 or 20`);
             </div>
             <div>
               <h2 className="text-xl font-bold font-sans">Cloudflare Pages vs Workers Guide</h2>
-              <p className="text-xs text-neutral-400">Gothwad Meet Zero-Backend Deployment</p>
+              <p className="text-xs text-neutral-400">Bansify Meet Zero-Backend Deployment</p>
             </div>
           </div>
           <button
@@ -60,7 +60,7 @@ Node Version: 18 or 20`);
                   Aapko Cloudflare Pages par deploy karna chahiye! (Recommended)
                 </h3>
                 <p className="mt-1 leading-relaxed text-neutral-300">
-                  Kyonki <strong>Gothwad Meet</strong> ek modern React + Vite Single Page App (SPA) hai. 
+                  Kyonki <strong>Bansify Meet</strong> ek modern React + Vite Single Page App (SPA) hai. 
                   Cloudflare Pages static frontend hosting ke liye bana hai jo free me unlimited bandwidth, 
                   custom domain, instant global CDN, aur automatic HTTPS deta hai.
                 </p>
@@ -103,7 +103,7 @@ Node Version: 18 or 20`);
               Bina Backend ke WebRTC kaise kaam karta hai?
             </h4>
             <p className="mt-2 text-xs leading-relaxed text-neutral-300">
-              Gothwad Meet me Peer-to-Peer WebRTC use hota hai. Signaling ke liye cloud WebRTC broker 
+              Bansify Meet me Peer-to-Peer WebRTC use hota hai. Signaling ke liye cloud WebRTC broker 
               aur Google STUN servers (<code className="text-[#0494f4]">stun.l.google.com:19302</code>) 
               use hote hain. Audio, Video aur Chat seedha user-to-user (P2P mesh) encrypted stream hoti hai, 
               isliye aapko apna koi Express ya Node backend server chalane ki zaroorat nahi hai!

@@ -61,7 +61,7 @@ export const Navbar: React.FC<Props> = ({
         <div className="flex flex-col">
           <div className="flex items-center gap-1.5">
             <span className="font-sans font-semibold text-lg tracking-tight">
-              Gothwad<span className="text-[#0494f4] font-bold ml-1">Meet</span>
+              Bansify<span className="text-[#0494f4] font-bold ml-1">Meet</span>
             </span>
             <span className="hidden sm:inline-block px-1.5 py-0.5 rounded text-[10px] font-bold tracking-wider uppercase bg-[#0494f4]/20 text-[#0494f4] border border-[#0494f4]/40">
               WebRTC
