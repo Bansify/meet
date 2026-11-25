@@ -82,3 +82,9 @@
 .wave-bar-1 { animation: waveBar 0.6s infinite ease-in-out; }
 .wave-bar-2 { animation: waveBar 0.8s infinite ease-in-out 0.15s; }
 .wave-bar-3 { animation: waveBar 0.7s infinite ease-in-out 0.3s; }
+
+
+@keyframes loading {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(320%); }
+}

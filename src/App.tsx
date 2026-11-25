@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BansifyShell, MEET_SECTIONS } from './ui/BansifyShell';
+import SplashScreen from './ui/SplashScreen';
+import { useBansifySession } from './auth/useBansifySession';
 import { HomeLobby, generateMeetingCode } from './components/HomeLobby';
 import { GreenRoom } from './components/GreenRoom';
 import { MeetingRoom } from './components/MeetingRoom';
@@ -8,6 +10,26 @@ import { CloudflareGuideModal } from './components/CloudflareGuideModal';
 import { SettingsModal } from './components/SettingsModal';
 
 type AppScreen = 'home' | 'green-room' | 'meeting' | 'ended';
+
+type AccountSheet = { open?: () => void };
+
+let sheetPromise: Promise<AccountSheet | null> | null = null;
+
+function loadAccountSheet(): Promise<AccountSheet | null> {
+  if (sheetPromise) return sheetPromise;
+  sheetPromise = new Promise((resolve) => {
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.src = 'https://accounts.bansify.com/widget/account-menu.js';
+    script.onload = () => {
+      const scope = window as unknown as { BansifyAccountMenu?: AccountSheet; GothwadAccountMenu?: AccountSheet };
+      resolve(scope.BansifyAccountMenu ?? scope.GothwadAccountMenu ?? null);
+    };
+    script.onerror = () => resolve(null);
+    document.head.appendChild(script);
+  });
+  return sheetPromise;
+}
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState<AppScreen>('home');
@@ -118,9 +140,26 @@ export default function App() {
     setCurrentScreen('home');
   };
 
+  const { state: sessionState, user: sessionUser } = useBansifySession();
+
+  // The shared account sheet every Bansify app opens from its avatar. It is a module
+  // script published by Accounts, so it is loaded with a tag rather than an import.
+  const openAccountSheet = async () => {
+    const widget = await loadAccountSheet();
+    if (widget?.open) {
+      widget.open();
+      return;
+    }
+    window.location.href = 'https://accounts.bansify.com/account';
+  };
+
   const toggleTheme = () => {
     setIsDark((prev) => !prev);
   };
+
+  if (sessionState === 'checking') {
+    return <SplashScreen isDark={isDark} />;
+  }
 
   return (
     <BansifyShell
@@ -130,10 +169,10 @@ export default function App() {
       onOpenSettings={() => setIsSettingsOpen(true)}
       isDark={isDark}
       onToggleTheme={toggleTheme}
-      userName={userName}
-      onAccount={() => {
-        window.location.href = 'https://accounts.bansify.com/account';
-      }}
+      userName={sessionUser?.name || sessionUser?.username || userName}
+      userEmail={sessionUser?.email}
+      userAvatar={sessionUser?.avatarUrl ?? null}
+      onAccount={openAccountSheet}
       searchPlaceholder="Search meetings"
     >
 
