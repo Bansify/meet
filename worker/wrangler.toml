@@ -1,0 +1,15 @@
+name = "meet"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+
+[[durable_objects.bindings]]
+name = "MEET_ROOMS"
+class_name = "MeetingRoom"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["MeetingRoom"]
+
+[[routes]]
+pattern = "meet.bansify.com/api/*"
+zone_name = "bansify.com"
