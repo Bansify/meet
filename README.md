@@ -172,3 +172,7 @@ Application browser se neeche di gayi permissions request karti hai:
 Contributions welcome hain! Koi bhi bug fix ya naya feature add karne ke liye Pull Request (PR) open karein.
 
 Developed with ❤️ by **Bansify**.
+
+## Signalling Worker
+
+The room presence, signalling and chat Worker in `worker/` is deployed separately from the site and needs a Durable Object namespace. See [docs/SIGNALLING_DEPLOY.md](docs/SIGNALLING_DEPLOY.md) for the exact requirements, the current state and the deploy command.
