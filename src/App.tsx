@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar } from './components/Navbar';
+import { BansifyShell, MEET_SECTIONS } from './ui/BansifyShell';
 import { HomeLobby, generateMeetingCode } from './components/HomeLobby';
 import { GreenRoom } from './components/GreenRoom';
 import { MeetingRoom } from './components/MeetingRoom';
@@ -123,20 +123,19 @@ export default function App() {
   };
 
   return (
-    <div
-      className={`min-h-screen flex flex-col transition-colors duration-200 ${
-        isDark ? 'bg-[#212121] text-white' : 'bg-white text-neutral-900'
-      }`}
+    <BansifyShell
+      sections={MEET_SECTIONS}
+      activeSection={currentScreen === 'meeting' ? 'meeting' : 'home'}
+      onSelect={(id) => setCurrentScreen(id === 'meeting' ? 'meeting' : 'home')}
+      onOpenSettings={() => setIsSettingsOpen(true)}
+      isDark={isDark}
+      onToggleTheme={toggleTheme}
+      userName={userName}
+      onAccount={() => {
+        window.location.href = 'https://accounts.bansify.com/account';
+      }}
+      searchPlaceholder="Search meetings"
     >
-      {/* Top Navigation */}
-      <Navbar
-        isDark={isDark}
-        onToggleTheme={toggleTheme}
-        onOpenSettings={() => setIsSettingsOpen(true)}
-        onOpenCloudflareGuide={() => setIsCloudflareGuideOpen(true)}
-        roomId={roomId}
-        inMeeting={currentScreen === 'meeting'}
-      />
 
       {/* Main View Router */}
       <main className="flex-1 flex flex-col relative overflow-hidden">
@@ -201,6 +200,6 @@ export default function App() {
         mirrorVideo={mirrorVideo}
         onToggleMirror={() => setMirrorVideo((v) => !v)}
       />
-    </div>
+    </BansifyShell>
   );
 }
